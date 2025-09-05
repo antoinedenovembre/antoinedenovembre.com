@@ -6,6 +6,11 @@
     min-height: 70vh;
 }
 
+.resume-grid.single-resume {
+    grid-template-rows: 1fr;
+    min-height: 50vh;
+}
+
 .resume-item {
     position: relative;
     border-top: 1px solid var(--line);

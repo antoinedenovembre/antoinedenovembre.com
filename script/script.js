@@ -1,85 +1,116 @@
-// Add date to copyright
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// Add age to whoami modal, compute with month precision
-const birthYear = 2002;
-const birthMonth = 11; // November
-const currentYear = new Date().getFullYear();
-const currentMonth = new Date().getMonth() + 1; // getMonth() is zero-based
-let age = currentYear - birthYear;
-if (currentMonth < birthMonth) {
-  age--; // Not had birthday yet this year
-}
-document.getElementById('age').textContent = age;
-
-// Modal functionality
-function openModal(modalId) {
-  const modal = document.getElementById(modalId);
-  if (modal) {
-    modal.classList.add('show');
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+// Wait for DOM and translation system
+function initializeScripts() {
+  // Add date to copyright (if not handled by translation system)
+  const yearSpan = document.getElementById('year');
+  if (yearSpan && !yearSpan.textContent) {
+    yearSpan.textContent = new Date().getFullYear();
   }
-}
 
-function closeModal(modalId) {
-  const modal = document.getElementById(modalId);
-  if (modal) {
-    modal.classList.remove('show');
-    document.body.style.overflow = ''; // Restore scrolling
-  }
-}
-
-// Handle modal links
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', (e) => {
-    const href = a.getAttribute('href');
-    
-    // Check if it's a modal link
-    if (href === '#whoami') {
-      e.preventDefault();
-      openModal('modal-whoami');
-    } else if (href === '#contact') {
-      e.preventDefault();
-      openModal('modal-contact');
-    } else {
-      // Regular anchor scroll
-      const id = href.slice(1);
-      const el = document.getElementById(id);
-      if (el) {
-        e.preventDefault();
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+  // Calculate age function
+  function calculateAge() {
+    const birthYear = 2002;
+    const birthMonth = 11;
+    const birthDay = 1;
+    const today = new Date();
+    let age = today.getFullYear() - birthYear;
+    const m = today.getMonth() + 1 - birthMonth;
+    if (m < 0 || (m === 0 && today.getDate() < birthDay)) {
+      age--;
     }
-  });
-});
+    return age;
+  }
 
-// Close modal buttons
-document.querySelectorAll('.modal-close').forEach(button => {
-  button.addEventListener('click', () => {
-    const modal = button.closest('.modal');
+  // Update age if element exists
+  function updateAge() {
+    const ageSpan = document.getElementById('age');
+    if (ageSpan) {
+      ageSpan.textContent = calculateAge();
+    }
+  }
+
+  // Initial age update
+  updateAge();
+
+  // Export calculateAge function globally
+  window.calculateAge = calculateAge;
+
+  // Modal functionality
+  function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+  }
+
+  function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
     if (modal) {
       modal.classList.remove('show');
-      document.body.style.overflow = '';
+      document.body.style.overflow = ''; // Restore scrolling
     }
-  });
-});
-
-// Close modal when clicking outside
-document.querySelectorAll('.modal').forEach(modal => {
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('show');
-      document.body.style.overflow = '';
-    }
-  });
-});
-
-// Close modal with Escape key
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.modal.show').forEach(modal => {
-      modal.classList.remove('show');
-      document.body.style.overflow = '';
-    });
   }
-});
+
+  // Handle modal links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const href = a.getAttribute('href');
+      
+      // Check if it's a modal link
+      if (href === '#whoami') {
+        e.preventDefault();
+        openModal('modal-whoami');
+      } else if (href === '#contact') {
+        e.preventDefault();
+        openModal('modal-contact');
+      } else {
+        // Regular anchor scroll
+        const id = href.slice(1);
+        const el = document.getElementById(id);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+
+  // Close modal buttons
+  document.querySelectorAll('.modal-close').forEach(button => {
+    button.addEventListener('click', () => {
+      const modal = button.closest('.modal');
+      if (modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  // Close modal when clicking outside
+  document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal.show').forEach(modal => {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+      });
+    }
+  });
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeScripts);
+} else {
+  // DOM already loaded, wait a bit for translation system
+  setTimeout(initializeScripts, 100);
+}

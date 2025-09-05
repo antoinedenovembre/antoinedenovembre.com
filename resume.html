@@ -14,45 +14,28 @@
             <div class="brand"><a href="index.html">antoine duteyrat.</a> - resume.</div>
             <div class="contact" aria-label="Contact">
                 <a href="mailto:aduteyrat@gmail.com">aduteyrat@gmail.com</a><br />
-                <small>email me</small>
+                <small data-translate="header.contact_label">email me</small>
             </div>
         </div>
     </header>
 
-    <!-- Resume Grid 1x2 -->
+    <!-- Resume Grid 1x1 -->
     <main class="container" id="top">
-        <section class="resume-grid" aria-label="Resume downloads">
-            <!-- French CV -->
-            <div class="resume-item" id="resume-fr">
+        <section class="resume-grid single-resume" aria-label="Resume downloads">
+            <!-- Dynamic Resume based on language -->
+            <div class="resume-item" id="resume-dynamic">
                 <div class="resume-title">
-                    <h2 class="label">CV FRANÇAIS</h2>
+                    <h2 class="label" data-translate="resume.title">CV</h2>
                     <div class="actions">
-                        <a href="https://github.com/antoinedenovembre/resume/releases/latest/download/resume_fr.pdf"
-                            target="_blank" rel="noopener">PDF (avec photo)</a>
-                        <a href="https://github.com/antoinedenovembre/resume/releases/latest/download/resume-no-image-fr.pdf"
-                            target="_blank" rel="noopener">Sans photo</a>
+                        <a href="#" id="resume-with-photo" target="_blank" rel="noopener"
+                            data-translate="resume.actions.with_photo">PDF (avec photo)</a>
+                        <a href="#" id="resume-without-photo" target="_blank" rel="noopener"
+                            data-translate="resume.actions.without_photo">Sans photo</a>
                     </div>
                 </div>
                 <div class="resume-preview">
                     <img src="https://raw.githubusercontent.com/antoinedenovembre/resume/main/assets/previews/preview_fr.png"
-                        alt="French Resume Preview" loading="lazy" />
-                </div>
-            </div>
-
-            <!-- English Resume -->
-            <div class="resume-item" id="resume-en">
-                <div class="resume-title">
-                    <h2 class="label">ENGLISH RESUME</h2>
-                    <div class="actions">
-                        <a href="https://github.com/antoinedenovembre/resume/releases/latest/download/resume_en.pdf"
-                            target="_blank" rel="noopener">PDF (with photo)</a>
-                        <a href="https://github.com/antoinedenovembre/resume/releases/latest/download/resume-no-image-en.pdf"
-                            target="_blank" rel="noopener">Without photo</a>
-                    </div>
-                </div>
-                <div class="resume-preview">
-                    <img src="https://raw.githubusercontent.com/antoinedenovembre/resume/main/assets/previews/preview_en.png"
-                        alt="English Resume Preview" loading="lazy" />
+                        alt="Resume Preview" loading="lazy" id="resume-preview-img" />
                 </div>
             </div>
         </section>
@@ -60,9 +43,10 @@
 
     <div class="container" aria-hidden="true"></div>
     <footer class="container" aria-label="footer">
-        © <span id="year"></span> - Antoine Duteyrat
+        © <span id="year"></span> — Antoine Duteyrat
     </footer>
 
+    <script src="script/translation.js"></script>
     <script src="script/script.js"></script>
 </body>
 

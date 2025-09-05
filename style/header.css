@@ -35,3 +35,32 @@
 .rule {
     border-top: 1px solid var(--line)
 }
+
+/* Language switcher */
+.lang-switcher {
+    display: flex;
+    gap: 0.5rem;
+    margin-right: 2rem;
+}
+
+.lang-btn {
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--fg);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.lang-btn:hover {
+    border-color: var(--fg);
+}
+
+.lang-btn.active {
+    background: var(--fg);
+    color: var(--bg);
+}

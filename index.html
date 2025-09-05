@@ -14,7 +14,7 @@
       <div class="brand">antoine duteyrat.</div>
       <div class="contact" aria-label="Contact">
         <a href="mailto:aduteyrat@gmail.com">aduteyrat@gmail.com</a><br />
-        <small>email me</small>
+        <small data-translate="header.contact_label">email me</small>
       </div>
     </div>
   </header>
@@ -22,23 +22,23 @@
   <main class="container" id="top">
     <section class="matrix" aria-label="Menu principal">
       <a class="cell" href="#whoami" aria-label="WHOAMI">
-        <div class="label">WHOAMI</div>
+        <div class="label" data-translate="nav.whoami">WHOAMI</div>
       </a>
       <a class="cell" href="#work" aria-label="WORK">
-        <div class="label">WORK</div>
+        <div class="label" data-translate="nav.work">WORK</div>
       </a>
       <a class="cell" href="resume.html" aria-label="RESUME">
-        <div class="label">RESUME</div>
+        <div class="label" data-translate="nav.resume">RESUME</div>
       </a>
       <a class="cell" href="#contact" aria-label="CONTACT">
-        <div class="label">CONTACT</div>
+        <div class="label" data-translate="nav.contact">CONTACT</div>
       </a>
     </section>
   </main>
 
   <div class="container" aria-hidden="true"></div>
   <footer class="container" aria-label="footer">
-    © <span id="year"></span> - Antoine Duteyrat
+    © <span id="year"></span> — Antoine Duteyrat
   </footer>
 
   <!-- Modal WHOAMI -->
@@ -46,9 +46,11 @@
     <div class="modal-content">
       <button class="modal-close" aria-label="Fermer">&times;</button>
       <h2>WHOAMI</h2>
-      <p>Bonjour! Je suis Antoine, j'ai <span id="age"></span> ans et je suis ingénieur en logiciel et traitement d'image embarqué.</p>
-      <p>Je suis spécialisé dans les langages C/C++ et j'adore automatiser des tâches en Bash ou par CI/CD.</p>
-      <p>J'aime créer des choses simples, efficaces et faciles à utiliser.</p>
+      <div class="modal-body">
+        <p>sentence 1</p>
+        <p>sentence 2</p>
+        <p>sentence 3</p>
+      </div>
     </div>
   </div>
 
@@ -57,16 +59,19 @@
     <div class="modal-content">
       <button class="modal-close" aria-label="Fermer">&times;</button>
       <h2>CONTACT</h2>
-      <p>Envoyez-moi un email pour discuter de vos projets :</p>
-      <p><a href="mailto:aduteyrat@gmail.com">aduteyrat@gmail.com</a></p>
-      <p>Vous pouvez aussi me retrouver sur :</p>
-      <ul>
-        <li><a href="https://github.com/antoinedenovembre" target="_blank">GitHub</a></li>
-        <li><a href="https://linkedin.com/in/antoineduteyrat" target="_blank">LinkedIn</a></li>
-      </ul>
+      <div class="modal-body">
+        <p>sentence 1</p>
+        <p><a href="mailto:aduteyrat@gmail.com">aduteyrat@gmail.com</a></p>
+        <p>sentence 2</p>
+        <ul>
+          <li><a href="https://github.com/antoinedenovembre" target="_blank">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/antoineduteyrat" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 
+  <script src="script/translation.js"></script>
   <script src="script/script.js"></script>
 </body>
 
