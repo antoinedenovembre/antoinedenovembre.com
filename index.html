@@ -1,20 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antoine Duteyrat - Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Antoine — Home</title>
+  <link rel="stylesheet" href="style/stylesheet.css" />
 </head>
+
 <body>
-    <header>
-        <h1>Welcome to antoinedenovembre.com</h1>
-    </header>
-    <main>
-        <p>Work in progress...</p>
-    </main>
-    <footer>
-        <p>&copy; 2024 Antoine Duteyrat</p>
-    </footer>
-    <!-- js scripts -->
+  <header class="header container" aria-label="En‑tête">
+    <div class="row">
+      <div class="brand">antoine duteyrat.</div>
+      <div class="contact" aria-label="Contact">
+        <a href="mailto:aduteyrat@gmail.com">aduteyrat@gmail.com</a><br />
+        <small>email me</small>
+      </div>
+    </div>
+  </header>
+  <div class="rule container" aria-hidden="true"></div>
+
+  <main class="container" id="top">
+    <section class="matrix" aria-label="Menu principal">
+      <a class="cell" href="#whoami" aria-label="WHOAMI">
+        <div class="label">WHOAMI</div>
+      </a>
+      <a class="cell" href="#work" aria-label="WORK">
+        <div class="label">WORK</div>
+      </a>
+      <a class="cell" href="#resume" aria-label="RESUME">
+        <div class="label">RESUME</div>
+      </a>
+      <a class="cell" aria-label="...">
+        <div class="label">...</div>
+      </a>
+    </section>
+  </main>
+
+  <div class="container" aria-hidden="true"></div>
+  <footer class="container" aria-label="Pied de page">
+    © <span id="year"></span> — Antoine Duteyrat
+  </footer>
+
+  <script src="script/script.js"></script>
 </body>
+
 </html>
