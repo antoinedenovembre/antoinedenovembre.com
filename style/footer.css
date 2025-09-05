@@ -1,0 +1,13 @@
+/* Footer styles */
+.footer-rule {
+    border-top: 1px solid var(--line)
+}
+
+footer {
+    padding: 64px 0 36px;
+    margin: 64px 0 36px;
+    color: #6b7280;
+    font-size: 12px;
+    text-align: center;
+    font: 18px/1.45 'Georgia', 'Times New Roman', Times, serif
+}

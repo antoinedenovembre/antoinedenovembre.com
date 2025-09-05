@@ -1,0 +1,37 @@
+/* Header styles */
+.header {
+    height: var(--head);
+    display: flex;
+    align-items: center;
+    font: 18px/1.45 'Georgia', 'Times New Roman', Times, serif
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -.02em
+}
+
+.meta,
+.contact {
+    font-size: 14px;
+    color: #111
+}
+
+.meta small,
+.contact small {
+    display: block;
+    color: #6b7280
+}
+
+/* Rule under header */
+.rule {
+    border-top: 1px solid var(--line)
+}
