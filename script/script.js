@@ -1,6 +1,17 @@
 // Add date to copyright
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Add age to whoami modal, compute with month precision
+const birthYear = 2002;
+const birthMonth = 11; // November
+const currentYear = new Date().getFullYear();
+const currentMonth = new Date().getMonth() + 1; // getMonth() is zero-based
+let age = currentYear - birthYear;
+if (currentMonth < birthMonth) {
+  age--; // Not had birthday yet this year
+}
+document.getElementById('age').textContent = age;
+
 // Modal functionality
 function openModal(modalId) {
   const modal = document.getElementById(modalId);

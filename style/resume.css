@@ -38,17 +38,18 @@
 
 .resume-title .actions a {
     padding: 0.5rem 1rem;
-    border: 2px solid #000;
+    border: 1px solid #333;
     text-decoration: none;
-    color: #000;
+    color: #333;
     font-weight: bold;
     transition: all 0.2s ease;
     background: #fff;
+    border-radius: 5px;
 }
 
 .resume-title .actions a:hover {
-    background: #000;
-    color: #fff;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
 }
 
 .resume-preview {
