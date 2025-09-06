@@ -9,6 +9,9 @@ class AppInitializer {
   init() {
     console.log('Initializing application...');
     
+    // Initialize responsive navigation first
+    this.responsiveNav = new window.ResponsiveNavigation();
+    
     // Initialize translation system
     this.translationSystem = new window.TranslationSystem();
     

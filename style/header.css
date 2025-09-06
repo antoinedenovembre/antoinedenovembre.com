@@ -10,13 +10,33 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%
+    width: 100%;
+    position: relative;
 }
 
 .brand {
     font-weight: 700;
     font-size: 24px;
     letter-spacing: -.02em
+}
+
+.brand .full-name {
+    display: inline;
+}
+
+.brand .short-name {
+    display: none;
+}
+
+/* Mobile responsive branding */
+@media (max-width: 768px) {
+    .brand .full-name {
+        display: none;
+    }
+
+    .brand .short-name {
+        display: inline;
+    }
 }
 
 .meta,
@@ -38,17 +58,23 @@
 
 /* Language switcher */
 .lang-switcher {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     gap: 0.5rem;
-    z-index: 1000;
-    background: var(--bg);
-    padding: 0.5rem;
-    border: 1px solid var(--line);
-    border-radius: 6px;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Mobile responsive adjustments for language switcher */
+@media (max-width: 768px) {
+    .lang-switcher {
+        gap: 0.3rem;
+    }
+
+    .row {
+        gap: 1rem;
+    }
 }
 
 .lang-btn {
@@ -62,6 +88,22 @@
     transition: all 0.2s ease;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+}
+
+/* Mobile responsive adjustments for buttons */
+@media (max-width: 768px) {
+    .lang-btn {
+        padding: 0.2rem 0.5rem;
+        font-size: 10px;
+    }
+
+    .contact {
+        font-size: 12px;
+    }
+
+    .brand {
+        font-size: 20px;
+    }
 }
 
 .lang-btn:hover {

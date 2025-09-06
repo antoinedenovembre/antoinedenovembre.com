@@ -17,8 +17,12 @@ class LanguageSwitcher {
       <button class="lang-btn ${this.translationSystem.currentLang === 'en' ? 'active' : ''}" data-lang="en">EN</button>
     `;
     
-    // Add to body so it can be positioned fixed
-    document.body.appendChild(switcher);
+    // Add to header row (will be positioned with CSS)
+    const headerRow = document.querySelector('.header .row');
+    
+    if (headerRow) {
+      headerRow.appendChild(switcher);
+    }
     
     // Add event listeners
     this.addEventListeners(switcher);
