@@ -1,0 +1,68 @@
+/* Content page styles */
+.content-page {
+    min-height: 70vh;
+    padding: clamp(20px, 4vw, 40px) 0;
+    border-top: 1px solid var(--line);
+}
+
+.content-page h1 {
+    font-size: clamp(32px, 8vw, 80px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin: 0 0 clamp(20px, 4vw, 40px) 0;
+    color: var(--fg);
+}
+
+.content-body {
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+.content-body p {
+    font-size: clamp(16px, 2.5vw, 20px);
+    margin: 0 0 1.5em 0;
+    color: var(--fg);
+}
+
+.content-body a {
+    color: var(--fg);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    transition: all 0.2s ease;
+}
+
+.content-body a:hover {
+    text-decoration-thickness: 3px;
+}
+
+.content-body ul {
+    margin: 1.5em 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.content-body li {
+    font-size: clamp(16px, 2.5vw, 20px);
+    margin: 0.75em 0;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.content-body li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--fg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content-page {
+        padding: clamp(16px, 4vw, 20px) 0;
+    }
+
+    .content-body {
+        max-width: 100%;
+    }
+}

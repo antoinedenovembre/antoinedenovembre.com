@@ -152,19 +152,42 @@ class SimpleTranslation {
     // Update all elements with data-translate attribute
     document.querySelectorAll('[data-translate]').forEach(element => {
       const key = element.getAttribute('data-translate');
-      const translation = this.t(key);
+      let translation = this.t(key);
+      
+      // Handle array index notation (e.g., "modal.whoami.content.0")
+      if (key.includes('.') && key.match(/\.\d+$/)) {
+        const parts = key.split('.');
+        const index = parseInt(parts.pop());
+        const baseKey = parts.join('.');
+        const baseTranslation = this.t(baseKey);
+        
+        if (Array.isArray(baseTranslation) && baseTranslation[index]) {
+          translation = baseTranslation[index];
+        }
+      }
       
       console.log(`Translating ${key} -> ${translation}`);
       
       if (Array.isArray(translation)) {
         element.innerHTML = translation.join('<br>');
       } else {
-        element.textContent = translation;
+        // Handle HTML content for elements that may contain spans
+        if (translation.includes('<span')) {
+          element.innerHTML = translation;
+          
+          // Update age if this element contains age span
+          const ageSpan = element.querySelector('#age');
+          if (ageSpan) {
+            ageSpan.textContent = this.calculateAge();
+          }
+        } else {
+          element.textContent = translation;
+        }
       }
     });
 
-    // Update modal content specifically
-    this.updateModalContent();
+    // Update modal content specifically (legacy - now used for pages)
+    this.updatePageContent();
     
     // Update resume page content
     this.updateResumeContent();
@@ -186,55 +209,11 @@ class SimpleTranslation {
     return age;
   }
 
-  updateModalContent() {
-    // WHOAMI modal
-    const whoamiModal = document.getElementById('modal-whoami');
-    if (whoamiModal) {
-      const title = whoamiModal.querySelector('h2');
-      const content = whoamiModal.querySelector('.modal-body');
-      
-      if (title) {
-        title.textContent = this.t('modal.whoami.title');
-      }
-      if (content) {
-        const paragraphs = this.t('modal.whoami.content');
-        if (Array.isArray(paragraphs)) {
-          content.innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
-          
-          // Update age after setting content
-          const ageSpan = content.querySelector('#age');
-          if (ageSpan) {
-            ageSpan.textContent = this.calculateAge();
-          }
-        }
-      }
-    }
-
-    // CONTACT modal
-    const contactModal = document.getElementById('modal-contact');
-    if (contactModal) {
-      const title = contactModal.querySelector('h2');
-      const content = contactModal.querySelector('.modal-body');
-      
-      if (title) {
-        title.textContent = this.t('modal.contact.title');
-      }
-      if (content) {
-        const contentParts = this.t('modal.contact.content');
-        const links = this.t('modal.contact.links');
-        
-        if (Array.isArray(contentParts) && links) {
-          content.innerHTML = `
-            <p>${contentParts[0]}</p>
-            <p><a href="mailto:aduteyrat@gmail.com">aduteyrat@gmail.com</a></p>
-            <p>${contentParts[1]}</p>
-            <ul>
-              <li><a href="https://github.com/antoinedenovembre" target="_blank">${links.github}</a></li>
-              <li><a href="https://linkedin.com/in/antoineduteyrat" target="_blank">${links.linkedin}</a></li>
-            </ul>
-          `;
-        }
-      }
+  updatePageContent() {
+    // Update age on pages that contain it (whoami page)
+    const ageSpan = document.getElementById('age');
+    if (ageSpan) {
+      ageSpan.textContent = this.calculateAge();
     }
   }
 
@@ -269,30 +248,27 @@ class SimpleTranslation {
   }
 
   addLanguageSwitcher() {
-    const header = document.querySelector('.header .row');
-    if (header && !header.querySelector('.lang-switcher')) {
-      const switcher = document.createElement('div');
-      switcher.className = 'lang-switcher';
-      switcher.innerHTML = `
-        <button class="lang-btn ${this.currentLang === 'fr' ? 'active' : ''}" data-lang="fr">FR</button>
-        <button class="lang-btn ${this.currentLang === 'en' ? 'active' : ''}" data-lang="en">EN</button>
-      `;
-      
-      // Insert before contact info
-      const contact = header.querySelector('.contact');
-      if (contact) {
-        header.insertBefore(switcher, contact);
-      } else {
-        header.appendChild(switcher);
-      }
-      
-      // Add event listeners
-      switcher.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          this.switchLanguage(btn.getAttribute('data-lang'));
-        });
-      });
+    // Check if switcher already exists
+    if (document.querySelector('.lang-switcher')) {
+      return;
     }
+    
+    const switcher = document.createElement('div');
+    switcher.className = 'lang-switcher';
+    switcher.innerHTML = `
+      <button class="lang-btn ${this.currentLang === 'fr' ? 'active' : ''}" data-lang="fr">FR</button>
+      <button class="lang-btn ${this.currentLang === 'en' ? 'active' : ''}" data-lang="en">EN</button>
+    `;
+    
+    // Add to body so it can be positioned fixed
+    document.body.appendChild(switcher);
+    
+    // Add event listeners
+    switcher.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        this.switchLanguage(btn.getAttribute('data-lang'));
+      });
+    });
   }
 
   switchLanguage(lang) {

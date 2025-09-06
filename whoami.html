@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>antoine duteyrat. - whoami.</title>
+    <link rel="stylesheet" href="style/main.css" />
+</head>
+
+<body>
+    <header class="header container" aria-label="header">
+        <div class="row">
+            <div class="brand"><a href="index.html">antoine duteyrat.</a> - whoami.</div>
+            <div class="contact" aria-label="Contact">
+                <a href="mailto:aduteyrat@gmail.com">aduteyrat@gmail.com</a><br />
+                <small data-translate="header.contact_label">email me</small>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" id="top">
+        <section class="content-page" aria-label="Who am I">
+            <h1 data-translate="modal.whoami.title">QUI SUIS-JE?</h1>
+            <div class="content-body">
+                <p data-translate="modal.whoami.content.0">Bonjour! Je suis Antoine, j'ai <span id="age"></span> ans et
+                    je suis ingénieur en logiciel et traitement d'image embarqué.</p>
+                <p data-translate="modal.whoami.content.1">Je suis spécialisé dans les langages C/C++ et j'adore
+                    automatiser des tâches en Bash ou par CI/CD.</p>
+                <p data-translate="modal.whoami.content.2">J'aime créer des choses simples, efficaces et faciles à
+                    utiliser.</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="container" aria-hidden="true"></div>
+    <footer class="container" aria-label="footer">
+        © <span id="year"></span> — Antoine Duteyrat
+    </footer>
+
+    <script src="script/translation.js"></script>
+    <script src="script/script.js"></script>
+</body>
+
+</html>

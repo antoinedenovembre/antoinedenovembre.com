@@ -38,9 +38,17 @@
 
 /* Language switcher */
 .lang-switcher {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     gap: 0.5rem;
-    margin-right: 2rem;
+    z-index: 1000;
+    background: var(--bg);
+    padding: 0.5rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
 }
 
 .lang-btn {
