@@ -12,33 +12,4 @@
     .matrix>.cell:nth-child(even) {
         border-left: none
     }
-
-    /* Resume responsive */
-    .resume-item {
-        flex-direction: column;
-        align-items: stretch;
-        overflow: hidden;
-    }
-
-    .resume-title {
-        padding-right: 0;
-        margin-bottom: 1rem;
-    }
-
-    .resume-preview {
-        position: static;
-        transform: none;
-        width: auto;
-        max-height: 0;
-        transition: max-height 0.3s ease, opacity 0.3s ease;
-    }
-
-    .resume-item:hover .resume-preview {
-        width: auto;
-        max-height: 300px;
-    }
-
-    .resume-preview img {
-        max-width: 200px;
-    }
 }

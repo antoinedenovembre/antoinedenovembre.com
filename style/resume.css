@@ -23,16 +23,17 @@
     cursor: pointer;
 }
 
+.resume-title h1.label {
+    font-size: clamp(32px, 8vw, 80px);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin: 0 0 clamp(20px, 4vw, 25px) 0;
+    color: var(--fg);
+}
+
 .resume-title {
     flex: 1;
     padding-right: 2rem;
-}
-
-.resume-title h2 {
-    font-size: clamp(28px, 7vw, 64px);
-    font-weight: 500;
-    letter-spacing: -.01em;
-    margin: 0 0 1rem 0;
 }
 
 .resume-title .actions {
@@ -57,23 +58,66 @@
     text-decoration-thickness: 2px;
 }
 
-.resume-preview {
-    position: absolute;
-    right: clamp(16px, 2.5vw, 28px);
-    top: 50%;
-    transform: translateY(-50%);
-    width: 0;
-    overflow: hidden;
-    transition: width 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-}
-
-.resume-item:hover .resume-preview {
-    width: 200px;
+.resume-item .resume-preview {
+    width: 300px;
     opacity: 1;
 }
 
 .resume-preview img {
     width: 100%;
     height: auto;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .resume-item {
+        flex-direction: column;
+        cursor: default;
+        pointer-events: none;
+        /* Disable all hover interactions */
+        transition: none !important;
+        /* Disable transition on the item itself */
+    }
+
+    .resume-item * {
+        pointer-events: auto;
+        /* Re-enable interactions for child elements */
+    }
+
+    /* Completely override hover behavior on mobile */
+    .resume-item:hover .resume-preview {
+        width: 100% !important;
+        opacity: 1 !important;
+        position: static !important;
+        transform: none !important;
+        top: auto !important;
+        right: auto !important;
+        transition: none !important;
+    }
+
+    .resume-title {
+        padding-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .resume-preview {
+        position: static !important;
+        width: 100% !important;
+        opacity: 1 !important;
+        transform: none !important;
+        overflow: visible !important;
+        transition: none !important;
+        top: auto !important;
+        right: auto !important;
+        /* Reset all positioning */
+        left: auto !important;
+        bottom: auto !important;
+    }
+
+    .resume-preview img {
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
+        transform: none !important;
+    }
 }
