@@ -43,6 +43,11 @@ const TRANSLATIONS = {
         without_photo: "PDF (sans photo)"
       }
     },
+    form: {
+      name_placeholder: "NOM",
+      email_placeholder: "EMAIL",
+      message_placeholder: "MESSAGE"
+    },
     footer: {
       copyright: "© {{year}} — Antoine Duteyrat"
     },
@@ -92,6 +97,11 @@ const TRANSLATIONS = {
         with_photo: "PDF (with photo)",
         without_photo: "PDF (without photo)"
       }
+    },
+    form: {
+      name_placeholder: "NAME",
+      email_placeholder: "EMAIL",
+      message_placeholder: "MESSAGE"
     },
     footer: {
       copyright: "© {{year}} — Antoine Duteyrat"

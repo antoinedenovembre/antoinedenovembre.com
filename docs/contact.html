@@ -40,9 +40,12 @@
                 <form action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="debef87a-6489-4669-b622-c47f4c1fdbd6">
 
-                    <input type="text" name="name" placeholder="Votre nom" required>
-                    <input type="email" name="email" placeholder="Votre adresse mail" required>
-                    <textarea name="message" required placeholder="Votre message..." rows="4"></textarea>
+                    <input type="text" name="name" placeholder="Votre nom" required
+                        data-translate-placeholder="form.name_placeholder">
+                    <input type="email" name="email" placeholder="Votre adresse mail" required
+                        data-translate-placeholder="form.email_placeholder">
+                    <textarea name="message" required placeholder="Votre message..." rows="4"
+                        data-translate-placeholder="form.message_placeholder"></textarea>
 
                     <!-- Honeypot spam protection -->
                     <input type="checkbox" name="botcheck" class="hidden" style="display: none;">

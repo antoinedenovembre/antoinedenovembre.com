@@ -59,8 +59,8 @@ class TranslationSystem {
   applyTranslations() {
     console.log('Applying translations for language:', this.currentLang);
     
-    // Update all elements with data-translate attribute
-    document.querySelectorAll('[data-translate]').forEach(element => {
+  // Update all elements with data-translate attribute
+  document.querySelectorAll('[data-translate]').forEach(element => {
       const key = element.getAttribute('data-translate');
       let translation = this.t(key);
       
@@ -93,6 +93,16 @@ class TranslationSystem {
         } else {
           element.textContent = translation;
         }
+      }
+
+    });
+
+    // Update all elements with data-translate-placeholder attribute (for input/textarea placeholders)
+    document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+      const key = element.getAttribute('data-translate-placeholder');
+      const translation = this.t(key);
+      if (translation) {
+        element.setAttribute('placeholder', translation);
       }
     });
 
