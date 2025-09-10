@@ -3,12 +3,15 @@
     align-items: center;
     margin-right: 0.5rem;
     cursor: pointer;
-    color: #222;
-    transition: color 0.2s;
+    color: #777;
 }
 
-.menu-icon:hover {
-    color: #0077ff;
+.menu-icon svg {
+    transition: color 0.3s ease-in-out;
+}
+
+.menu-icon:hover svg {
+    color: #111;
 }
 
 .menu-icon svg {

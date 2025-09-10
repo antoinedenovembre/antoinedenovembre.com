@@ -19,9 +19,16 @@ const TRANSLATIONS = {
       contact: {
         title: "CONTACT",
         content: [
-          "Envoyez-moi un email pour discuter de vos projets :",
+          "Envoyez-moi un message pour discuter de vos projets :",
           "Vous pouvez aussi me retrouver sur :"
         ],
+        success: {
+          title: "SUCCÈS",
+          content: [
+            "Votre message a été envoyé avec succès !",
+            "← Retourner à l'accueil"
+          ]
+        },
         links: {
           github: "GitHub",
           linkedin: "LinkedIn"
@@ -62,9 +69,16 @@ const TRANSLATIONS = {
       contact: {
         title: "CONTACT",
         content: [
-          "Send me an email to discuss your projects:",
+          "Send me a message to discuss your projects:",
           "You can also find me on:"
         ],
+        success: {
+          title: "SUCCESS",
+          content: [
+            "Your message has been sent successfully!",
+            "← Back to home"
+          ]
+        },
         links: {
           github: "GitHub",
           linkedin: "LinkedIn"

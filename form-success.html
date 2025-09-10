@@ -32,36 +32,15 @@
             </div>
         </div>
     </header>
-
+    
     <main class="container" id="top">
         <section class="content-page" aria-label="Contact">
-            <h1 data-translate="modal.contact.title">CONTACT</h1>
+            <h1 data-translate="modal.contact.success.title">SUCCÈS</h1>
             <div class="content-body">
-                <p data-translate="modal.contact.content.0">Envoyez-moi un message pour discuter de vos projets :</p>
-                <form action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="debef87a-6489-4669-b622-c47f4c1fdbd6">
-
-                    <input type="text" name="name" placeholder="Votre nom" required>
-                    <input type="email" name="email" placeholder="Votre adresse mail" required>
-                    <textarea name="message" required placeholder="Votre message..." rows="4"></textarea>
-
-                    <!-- Honeypot spam protection -->
-                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-                    <!-- Custom success Page -->
-                    <input type="hidden" name="redirect" value="https://antoinedenovembre.com/form-success.html">
-
-                    <button type="submit">ENVOYER</button>
-                </form>
-                <br />
-                <p data-translate="modal.contact.content.1">Vous pouvez aussi me retrouver sur :</p>
-                <a href="https://github.com/antoinedenovembre" target="_blank" aria-label="GitHub">
-                    <img src="img/github.svg" alt="GitHub" width="64" height="64" />
-                </a>
-                <div style="width:16px; display:inline-block;"></div>
-                <a href="https://www.linkedin.com/in/antoine-duteyrat" target="_blank" aria-label="LinkedIn">
-                    <img src="img/linkedin.svg" alt="LinkedIn" width="64" height="64" />
-                </a>
+                <p data-translate="modal.contact.success.content.0">Votre message a été envoyé avec succès !</p>
+                <p>
+                    <a href="index.html" data-translate="modal.contact.success.content.1">Retourner à l'accueil</a>
+                </p>
             </div>
         </section>
     </main>
