@@ -1,4 +1,40 @@
 /* Content page styles */
+/* Profile photo and text side by side */
+.profile-side {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.profile-side img {
+    max-width: 200px;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.profile-side .content-text {
+    min-width: 220px;
+    flex: 1 1 300px;
+}
+
+@media (max-width: 768px) {
+    .profile-side {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .profile-side img {
+        max-width: 30vw;
+    }
+
+    .profile-side .content-text {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
 .content-page {
     min-height: 70vh;
     padding: clamp(20px, 4vw, 40px) 0;

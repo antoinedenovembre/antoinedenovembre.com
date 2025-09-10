@@ -11,7 +11,7 @@ const TRANSLATIONS = {
       whoami: {
         title: "QUI SUIS-JE?",
         content: [
-          "Bonjour! Je suis Antoine, j'ai <span id=\"age\"></span> ans et je suis ingénieur en logiciel et traitement d'image embarqué.",
+          "Je suis Antoine, j'ai <span id=\"age\"></span> ans et je suis ingénieur en logiciel et traitement d'image embarqué.",
           "Je suis spécialisé dans les langages C/C++ et j'adore automatiser des tâches en Bash ou par CI/CD.",
           "J'aime créer des choses simples, efficaces et faciles à utiliser."
         ]

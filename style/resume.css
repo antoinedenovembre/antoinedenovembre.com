@@ -43,13 +43,13 @@
 }
 
 .resume-title .actions a {
-    padding: 0.5rem 1rem;
-    border: 1px solid #333;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: all 0.2s ease;
-    background: #fff;
+    background: var(--bg);
+    color: var(--fg);
+    border: 2px solid var(--line);
+    font-size: inherit;
+    font-weight: 700;
+    padding: 0.7em 1.5em;
+    cursor: pointer;
     border-radius: 5px;
 }
 
