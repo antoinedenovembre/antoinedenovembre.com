@@ -1,0 +1,18 @@
+.menu-icon {
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    cursor: pointer;
+    color: #222;
+    transition: color 0.2s;
+}
+
+.menu-icon:hover {
+    color: #0077ff;
+}
+
+.menu-icon svg {
+    display: block;
+    width: 28px;
+    height: 28px;
+}
