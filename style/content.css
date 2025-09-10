@@ -1,4 +1,19 @@
 /* Content page styles */
+/* Centrage des icônes réseaux sur mobile */
+@media (max-width: 768px) {
+    .content-body a[href*="github.com"],
+    .content-body a[href*="linkedin.com"] {
+        display: inline-block;
+        text-align: center;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    .content-body {
+        text-align: center;
+    }
+}
+
 /* Profile photo and text side by side */
 .profile-side {
     display: flex;
