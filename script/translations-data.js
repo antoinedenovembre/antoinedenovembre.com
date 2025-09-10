@@ -40,7 +40,7 @@ const TRANSLATIONS = {
       download_label: "Télécharger le CV français",
       actions: {
         with_photo: "PDF (avec photo)",
-        without_photo: "Sans photo"
+        without_photo: "PDF (sans photo)"
       }
     },
     footer: {
@@ -90,7 +90,7 @@ const TRANSLATIONS = {
       download_label: "Download English resume",
       actions: {
         with_photo: "PDF (with photo)",
-        without_photo: "Without photo"
+        without_photo: "PDF (without photo)"
       }
     },
     footer: {
