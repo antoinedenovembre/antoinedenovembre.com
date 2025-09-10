@@ -47,7 +47,7 @@ const TRANSLATIONS = {
       copyright: "© {{year}} — Antoine Duteyrat"
     },
     header: {
-      contact_label: "écrivez-moi"
+      contact_label: "écrivez-moi."
     }
   },
   en: {
@@ -97,7 +97,7 @@ const TRANSLATIONS = {
       copyright: "© {{year}} — Antoine Duteyrat"
     },
     header: {
-      contact_label: "email me"
+      contact_label: "email me."
     }
   }
 };

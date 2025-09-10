@@ -99,6 +99,22 @@
 
     .contact {
         font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .contact>a,
+    .contact>div {
+        display: none !important;
+    }
+
+    .contact>small {
+        display: block !important;
+        font-size: 16px;
+        color: #111;
+        font-weight: 600;
+        letter-spacing: 0.01em;
     }
 
     .brand {
