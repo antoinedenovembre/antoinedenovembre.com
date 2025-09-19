@@ -1,49 +1,37 @@
 /* Resume page styles */
-.resume-grid {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 0;
-    min-height: 70vh;
-}
-
-.resume-grid.single-resume {
-    grid-template-rows: 1fr;
-    min-height: 50vh;
+.content-page[aria-label="Resume downloads"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .resume-item {
-    position: relative;
-    border-top: 1px solid var(--line);
-    padding: clamp(16px, 2.5vw, 28px);
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    overflow: visible;
-    transition: all 0.3s ease;
-    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
 }
 
-.resume-title h1.label {
-    font-size: clamp(32px, 8vw, 80px);
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    margin: 0 0 clamp(20px, 4vw, 25px) 0;
-    color: var(--fg);
+.resume-preview {
+    width: 100%;
+    max-width: 600px;
 }
 
-.resume-title {
-    flex: 1;
-    padding-right: 2rem;
+.resume-preview img {
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--line);
 }
 
-.resume-title .actions {
+.actions {
     display: flex;
     gap: 1rem;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: flex-start;
 }
 
-.resume-title .actions a {
+.actions a {
     background: var(--bg);
     color: var(--fg);
     border: 2px solid var(--line);
@@ -51,82 +39,19 @@
     font-weight: 700;
     padding: 0.7em 1.5em;
     cursor: pointer;
+    text-align: center;
     border-radius: 5px;
+    text-decoration: none;
 }
 
-.resume-title .actions a:hover {
+.actions a:hover {
     text-decoration: underline;
     text-decoration-thickness: 2px;
 }
 
-.resume-item .resume-preview {
-    width: 300px;
-    opacity: 1;
-}
-
-.resume-preview img {
-    width: 100%;
-    height: auto;
-}
-
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
-    .resume-item {
-        flex-direction: column;
-        cursor: default;
-        pointer-events: none;
-        /* Disable all hover interactions */
-        transition: none !important;
-        /* Disable transition on the item itself */
-    }
-
-    .resume-item * {
-        pointer-events: auto;
-        /* Re-enable interactions for child elements */
-    }
-
-    /* Completely override hover behavior on mobile */
-    .resume-item:hover .resume-preview {
-        width: 100% !important;
-        opacity: 1 !important;
-        position: static !important;
-        transform: none !important;
-        top: auto !important;
-        right: auto !important;
-        transition: none !important;
-    }
-
-    .resume-title {
-        padding-right: 0;
-        margin-bottom: 1rem;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .resume-title .actions {
-        justify-content: center;
-        width: 100%;
-    }
-
     .resume-preview {
-        position: static !important;
-        width: 100% !important;
-        opacity: 1 !important;
-        transform: none !important;
-        overflow: visible !important;
-        transition: none !important;
-        top: auto !important;
-        right: auto !important;
-        /* Reset all positioning */
-        left: auto !important;
-        bottom: auto !important;
-    }
-
-    .resume-preview img {
-        max-width: 300px;
-        margin: 0 auto;
-        display: block;
-        transform: none !important;
+        max-width: 90vw;
     }
 }

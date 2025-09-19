@@ -31,32 +31,25 @@
         </div>
     </header>
 
-    <!-- Resume Grid 1x1 -->
     <main class="container" id="top">
-        <section class="resume-grid single-resume" aria-label="Resume downloads">
-            <!-- Dynamic Resume based on language -->
-            <div class="resume-item" id="resume-dynamic">
-                <div class="resume-title">
-                    <h1 class="label" data-translate="resume.title">CV</h1>
-                    <div class="actions">
-                        <a href="#" id="resume-with-photo" target="_blank" rel="noopener"
-                            data-translate="resume.actions.with_photo">pdf with photo</a>
-                        <a href="#" id="resume-without-photo" target="_blank" rel="noopener"
-                            data-translate="resume.actions.without_photo">pdf without photo</a>
-                    </div>
-                </div>
+        <section class="content-page">
+            <h1 data-translate="resume.title">CV</h1>
+            <div class="resume-item" id="resume-dynamic" aria-label="Resume downloads">
                 <div class="resume-preview">
                     <img src="https://raw.githubusercontent.com/antoinedenovembre/resume/main/assets/previews/preview_fr.png"
                         alt="Resume Preview" loading="lazy" id="resume-preview-img" />
+                </div>
+                <div class="actions">
+                    <a href="#" id="resume-with-photo" target="_blank" rel="noopener"
+                        data-translate="resume.actions.with_photo">pdf with photo</a>
+                    <a href="#" id="resume-without-photo" target="_blank" rel="noopener"
+                        data-translate="resume.actions.without_photo">pdf without photo</a>
                 </div>
             </div>
         </section>
     </main>
 
     <div class="container" aria-hidden="true"></div>
-    <footer class="container" aria-label="footer">
-        © <span id="year"></span> — Antoine Duteyrat
-    </footer>
 
     <script src="../script/translations-data.js"></script>
     <script src="../script/age-calculator.js"></script>
