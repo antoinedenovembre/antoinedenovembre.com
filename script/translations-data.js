@@ -95,7 +95,7 @@ const TRANSLATIONS = {
       download_label: "Download English resume",
       actions: {
         with_photo: "PDF (with photo)",
-        without_photo: "PDF (without photo)"
+        without_photo: "PDF (no photo)"
       }
     },
     form: {
