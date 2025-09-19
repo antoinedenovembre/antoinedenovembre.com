@@ -28,6 +28,11 @@
     display: none;
 }
 
+/* New style for .brand-page class */
+.brand .brand-page {
+    color: #888;
+}
+
 /* Mobile responsive branding */
 @media (max-width: 768px) {
     .brand .full-name {
@@ -105,12 +110,12 @@
         justify-content: flex-end;
     }
 
-    .contact > a,
-    .contact > div {
+    .contact>a,
+    .contact>div {
         display: none !important;
     }
 
-    .contact > small {
+    .contact>small {
         display: block !important;
         font-size: 16px;
         color: #111;
