@@ -2,7 +2,6 @@
     display: none;
     /* Masqué par défaut sur desktop */
     align-items: center;
-    margin-right: 0.5rem;
     cursor: pointer;
     color: #777;
 }
@@ -25,5 +24,7 @@
     .menu-icon {
         display: flex;
         /* Affiché sur mobile */
+        margin-left: 0.5rem;
+        /* Marge à gauche au lieu de droite */
     }
 }

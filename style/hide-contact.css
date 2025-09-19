@@ -1,23 +1,7 @@
-/* Responsive design */
-@media (max-width:900px) {
-    .header {
-        height: 64px
-    }
+/* Force hiding all contact elements on mobile */
+@media (max-width: 768px) {
 
-    .matrix {
-        grid-template-columns: 1fr;
-        grid-auto-rows: 160px
-    }
-
-    .matrix>.cell:nth-child(even) {
-        border-left: none
-    }
-}
-
-/* Masquer complètement le contact sur mobile */
-@media (max-width:768px) {
-
-    /* Cacher l'élément .contact */
+    /* Règles pour cacher l'élément .contact */
     .contact {
         display: none !important;
         visibility: hidden !important;
@@ -30,10 +14,8 @@
         overflow: hidden !important;
     }
 
-    /* Cacher tout ce qui est à l'intérieur de .contact */
+    /* Règles pour cacher tout ce qui est lié au contact */
     .contact *,
-    .contact a,
-    .contact small,
     small[data-translate="header.contact_label"],
     a[href^="mailto:"] {
         display: none !important;
@@ -45,12 +27,5 @@
         width: 1px !important;
         height: 1px !important;
         overflow: hidden !important;
-    }
-
-    /* Style spécifique pour cacher le texte 'email me'/'écrivez-moi' */
-    [data-translate="header.contact_label"] {
-        display: none !important;
-        visibility: hidden !important;
-        opacity: 0 !important;
     }
 }
