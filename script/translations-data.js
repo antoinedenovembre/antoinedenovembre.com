@@ -48,6 +48,27 @@ const TRANSLATIONS = {
       email_placeholder: "EMAIL",
       message_placeholder: "MESSAGE"
     },
+    projects: {
+      project1: {
+        title: "Projet Un",
+        description: "Une application web complète construite avec React et Node.js. Ce projet démontre les principes de conception responsive et les pratiques JavaScript modernes.",
+        demo: "Démo",
+        github: "GitHub",
+        caseStudy: "Étude de cas"
+      },
+      project2: {
+        title: "Projet Deux",
+        description: "Une plateforme e-commerce avec traitement de paiement intégré. Les fonctionnalités incluent l'authentification des utilisateurs, la gestion des produits et le suivi des commandes.",
+        visit: "Visiter le site",
+        caseStudy: "Étude de cas"
+      },
+      project3: {
+        title: "Projet Trois",
+        description: "Une application mobile-first développée avec Flutter. Cette solution multi-plateforme offre des performances natives tout en maintenant une base de code unique.",
+        appStore: "App Store",
+        playStore: "Play Store"
+      }
+    },
     footer: {
       copyright: "© {{year}} — Antoine Duteyrat"
     },
@@ -102,6 +123,27 @@ const TRANSLATIONS = {
       name_placeholder: "NAME",
       email_placeholder: "EMAIL",
       message_placeholder: "MESSAGE"
+    },
+    projects: {
+      project1: {
+        title: "Project One",
+        description: "A comprehensive web application built with React and Node.js. This project demonstrates responsive design principles and modern JavaScript practices.",
+        demo: "Demo",
+        github: "GitHub",
+        caseStudy: "Case Study"
+      },
+      project2: {
+        title: "Project Two",
+        description: "An e-commerce platform with integrated payment processing. Features include user authentication, product management, and order tracking.",
+        visit: "Visit Site",
+        caseStudy: "Case Study"
+      },
+      project3: {
+        title: "Project Three",
+        description: "A mobile-first application developed with Flutter. This cross-platform solution delivers native performance while maintaining a single codebase.",
+        appStore: "App Store",
+        playStore: "Play Store"
+      }
     },
     footer: {
       copyright: "© {{year}} — Antoine Duteyrat"
