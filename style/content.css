@@ -23,47 +23,36 @@
     }
 }
 
-/* Profile photo and text side by side */
-.profile-side {
-    display: flex;
-    gap: 32px;
-    align-items: flex-start;
-    flex-wrap: wrap;
+/* Profile photo avec texte adaptatif style Word */
+.profile-adaptive {
+    overflow: auto; /* Pour contenir les floats */
+    margin-bottom: 1.5em;
 }
 
-.profile-side img {
+.profile-adaptive img {
+    float: left;
     max-width: 200px;
     border-radius: 10px;
-    flex-shrink: 0;
+    margin-right: 32px;
+    margin-bottom: 16px;
+    shape-margin: 20px; /* Marge supplémentaire autour de l'image pour le texte */
 }
 
-.profile-side .content-text {
-    min-width: 220px;
-    flex: 1 1 300px;
+.profile-adaptive p {
+    margin-bottom: 1em;
+    text-align: left;
 }
 
 @media (max-width: 768px) {
-    .profile-side {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 18px;
-        justify-content: flex-start;
-    }
-
-    .profile-side img {
-        max-width: 32vw;
+    .profile-adaptive img {
+        max-width: 40%;
         min-width: 90px;
-        margin-right: 0.5em;
-        flex-shrink: 0;
+        margin-right: 16px;
+        margin-bottom: 8px;
     }
-
-    .profile-side .content-text {
-        min-width: 0;
-        width: auto;
+    
+    .profile-adaptive {
         text-align: left;
-        align-self: flex-start;
-        flex: 1 1 0;
     }
 }
 
