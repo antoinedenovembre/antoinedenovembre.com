@@ -7,7 +7,7 @@
     margin-right: 0;
 }
 
-/* Centrage des icônes réseaux sur mobile */
+/* Center social network icons on mobile */
 @media (max-width: 768px) {
 
     .content-body a[href*="github.com"],
@@ -23,9 +23,10 @@
     }
 }
 
-/* Profile photo avec texte adaptatif style Word */
+/* Profile photo with Word-like adaptive text */
 .profile-adaptive {
-    overflow: auto; /* Pour contenir les floats */
+    overflow: auto;
+    /* Contains floats */
     margin-bottom: 1.5em;
 }
 
@@ -35,7 +36,8 @@
     border-radius: 10px;
     margin-right: 32px;
     margin-bottom: 16px;
-    shape-margin: 20px; /* Marge supplémentaire autour de l'image pour le texte */
+    shape-margin: 20px;
+    /* Extra margin around the image for text */
 }
 
 .profile-adaptive p {
@@ -50,7 +52,7 @@
         margin-right: 16px;
         margin-bottom: 8px;
     }
-    
+
     .profile-adaptive {
         text-align: left;
     }

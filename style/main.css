@@ -8,4 +8,6 @@
 @import url('footer.css');
 @import url('responsive.css');
 @import url('hide-contact.css');
-/* Nouveau fichier pour cacher les éléments de contact */
+/* Hide contact elements on mobile */
+@import url('mobile-contact.css');
+/* Additional mobile contact hiding rules */

@@ -1,7 +1,7 @@
 /* Force hiding all contact elements on mobile */
 @media (max-width: 768px) {
 
-    /* Règles pour cacher l'élément .contact */
+    /* Rules to hide the .contact element */
     .contact {
         display: none !important;
         visibility: hidden !important;
@@ -14,7 +14,7 @@
         overflow: hidden !important;
     }
 
-    /* Règles pour cacher tout ce qui est lié au contact */
+    /* Rules to hide everything related to contact */
     .contact *,
     small[data-translate="header.contact_label"],
     a[href^="mailto:"] {

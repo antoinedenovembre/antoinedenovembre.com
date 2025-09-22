@@ -17,7 +17,7 @@
 /* Masquer complètement le contact sur mobile */
 @media (max-width:768px) {
 
-    /* Cacher l'élément .contact */
+    /* Hide .contact element */
     .contact {
         display: none !important;
         visibility: hidden !important;
@@ -30,7 +30,7 @@
         overflow: hidden !important;
     }
 
-    /* Cacher tout ce qui est à l'intérieur de .contact */
+    /* Hide everything inside .contact */
     .contact *,
     .contact a,
     .contact small,
@@ -47,7 +47,7 @@
         overflow: hidden !important;
     }
 
-    /* Style spécifique pour cacher le texte 'email me'/'écrivez-moi' */
+    /* Specific style to hide 'email me'/'écrivez-moi' text */
     [data-translate="header.contact_label"] {
         display: none !important;
         visibility: hidden !important;

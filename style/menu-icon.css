@@ -1,6 +1,6 @@
 .menu-icon {
     display: none;
-    /* Masqué par défaut sur desktop */
+    /* Hidden by default on desktop */
     align-items: center;
     cursor: pointer;
     color: #777;
@@ -23,8 +23,8 @@
 @media (max-width: 768px) {
     .menu-icon {
         display: flex;
-        /* Affiché sur mobile */
+        /* Displayed on mobile */
         margin-left: 0.5rem;
-        /* Marge à gauche au lieu de droite */
+        /* Left margin instead of right */
     }
 }

@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     function ensureContactHidden() {
         if (window.innerWidth <= 768) {
-            // Cacher tous les éléments avec la classe .contact
+            // Hide all elements with the .contact class
             const contactElements = document.querySelectorAll('.contact');
             contactElements.forEach(contact => {
                 contact.style.display = 'none !important';
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 contact.style.pointerEvents = 'none !important';
             });
             
-            // Cacher tous les éléments a[href^="mailto:"]
+            // Hide all mailto links
             const mailtoLinks = document.querySelectorAll('a[href^="mailto:"]');
             mailtoLinks.forEach(link => {
                 link.style.display = 'none !important';
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 link.style.pointerEvents = 'none !important';
             });
             
-            // Cacher tous les éléments small qui contiennent email me/écrivez-moi
+            // Hide all small elements containing email me/écrivez-moi
             const smallElements = document.querySelectorAll('small[data-translate="header.contact_label"]');
             smallElements.forEach(small => {
                 small.style.display = 'none !important';
@@ -38,5 +38,5 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', ensureContactHidden);
     
     // Run periodically to catch any JS that might change visibility
-    setInterval(ensureContactHidden, 100); // Augmenter la fréquence
+    setInterval(ensureContactHidden, 100); // Increased frequency
 });

@@ -1,0 +1,17 @@
+/* Mobile contact hiding rules */
+@media (max-width: 768px) {
+
+    .contact,
+    a[href^="mailto:"],
+    small[data-translate="header.contact_label"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        position: absolute !important;
+        left: -9999px !important;
+        width: 1px !important;
+        height: 1px !important;
+        overflow: hidden !important;
+    }
+}
